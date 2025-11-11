@@ -15,11 +15,8 @@
 
         body {
             background: 
-                /* خلفية احترافية بمظهر مكاتب سعودية */
                 linear-gradient(135deg, rgba(1, 68, 33, 0.9) 0%, rgba(0, 86, 63, 0.9) 50%, rgba(0, 56, 41, 0.9) 100%),
-                /* نمط هندسي يعبر عن التنظيم */
                 repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(212, 175, 55, 0.05) 10px, rgba(212, 175, 55, 0.05) 20px),
-                /* تأثير ضبابي احترافي */
                 radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
             min-height: 100vh;
@@ -30,7 +27,6 @@
             position: relative;
         }
 
-        /* تأثيرات إضافية للخلفية فقط */
         body::before {
             content: '';
             position: absolute;
@@ -39,30 +35,11 @@
             width: 100%;
             height: 100%;
             background: 
-                /* خطوط تنظيمية */
                 linear-gradient(90deg, transparent 95%, rgba(212, 175, 55, 0.1) 95%),
                 linear-gradient(0deg, transparent 95%, rgba(212, 175, 55, 0.1) 95%);
             background-size: 50px 50px;
             pointer-events: none;
             opacity: 0.3;
-        }
-
-        body::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                /* نقاط ذهبية متناثرة */
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 40% 90%, rgba(212, 175, 55, 0.15) 2px, transparent 3px),
-                radial-gradient(circle at 60% 10%, rgba(212, 175, 55, 0.15) 2px, transparent 3px);
-            background-size: 200px 200px;
-            pointer-events: none;
-            opacity: 0.4;
         }
 
         .container {
@@ -72,17 +49,29 @@
             z-index: 2;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        /* الجزء العلوي - اللوجو والاسم */
+        .top-section {
+            background: linear-gradient(135deg, #00563f, #003829);
+            border-radius: 20px 20px 0 0;
+            padding: 40px 25px 30px 25px;
             text-align: center;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            color: white;
+            position: relative;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .top-section::before {
+            content: '⚜️';
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 20px;
+            opacity: 0.8;
         }
 
         .logo-container {
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             text-align: center;
         }
 
@@ -90,28 +79,38 @@
             max-width: 100px;
             height: auto;
             border-radius: 15px;
+            border: 3px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .name {
             font-size: 24px;
             font-weight: 700;
-            color: #2d3748;
             margin-bottom: 8px;
+            color: white;
         }
 
         .subtitle {
-            color: #718096;
-            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 16px;
             font-weight: 500;
         }
 
+        /* الجزء السفلي - وسائل التواصل */
+        .bottom-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 0 0 20px 20px;
+            padding: 30px 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
         .phone-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #00563f, #003829);
             color: white;
             padding: 15px 30px;
             border-radius: 25px;
-            margin: 25px 0;
+            margin: 0 0 25px 0;
             display: inline-flex;
             align-items: center;
             gap: 12px;
@@ -119,22 +118,41 @@
             font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+            box-shadow: 0 5px 15px rgba(0, 86, 63, 0.3);
+            width: 100%;
+            justify-content: center;
         }
 
         .phone-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 86, 63, 0.5);
+            background: linear-gradient(135deg, #003829, #002c1f);
         }
 
         .social-section {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .section-title {
             font-size: 18px;
             font-weight: 600;
-            color: #2d3748;
+            color: #00563f;
             margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, #00563f);
+            border-radius: 2px;
         }
 
         .social-grid {
@@ -144,22 +162,27 @@
         }
 
         .social-item {
-            background: white;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
             padding: 20px 15px;
             border-radius: 15px;
             text-decoration: none;
-            color: #2d3748;
+            color: #00563f;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 
+                0 5px 15px rgba(0, 86, 63, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .social-item:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 10px 25px rgba(0, 86, 63, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
         }
 
         .social-icon {
@@ -172,17 +195,19 @@
             font-size: 22px;
             color: white;
             margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         .social-item:hover .social-icon {
-            transform: rotate(10deg) scale(1.1);
+            transform: rotate(5deg) scale(1.1);
         }
 
         .social-name {
             font-weight: 600;
             font-size: 14px;
             margin-top: 5px;
+            color: #00563f;
         }
 
         .whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); }
@@ -193,14 +218,19 @@
         .snapchat { background: linear-gradient(45deg, #FFFC00, #FFD300); color: #000; }
 
         .footer {
-            color: white;
+            color: rgba(255, 255, 255, 0.9);
             text-align: center;
             margin-top: 30px;
             font-size: 14px;
-            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 86, 63, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* تأثيرات إضافية */
+        /* تأثيرات متقدمة */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-5px); }
@@ -217,14 +247,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
+        <!-- الجزء العلوي - اللوجو والاسم -->
+        <div class="top-section">
             <div class="logo-container">
                 <img src="logo.png" alt="لوجو الشبعان للخدمات العامة" class="logo">
             </div>
             
             <div class="name">الشبعان للخدمات العامة</div>
             <div class="subtitle">Al-Shabaan for General Services</div>
-            
+        </div>
+
+        <!-- الجزء السفلي - وسائل التواصل -->
+        <div class="bottom-section">
             <a href="tel:+966554255560" class="phone-btn">
                 <i class="fas fa-phone"></i>
                 اتصل بنا
