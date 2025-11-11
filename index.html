@@ -36,18 +36,22 @@
             backdrop-filter: blur(10px);
         }
 
-        .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .logo-container {
+            width: 120px;
+            height: 120px;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 40px;
-            border: 3px solid white;
+            border-radius: 50%;
+            background: white;
+            padding: 5px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .name {
@@ -63,17 +67,36 @@
             font-size: 16px;
         }
 
-        .phone {
+        .phone-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 15px 25px;
-            border-radius: 25px;
+            border-radius: 50px;
             margin: 20px 0;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             text-decoration: none;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .phone-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
 
         .links {
@@ -147,14 +170,18 @@
 <body>
     <div class="container">
         <div class="card">
-            <div class="logo">
-                <i class="fas fa-building"></i>
+            <div class="logo-container">
+                <img src="logo.png" alt="لوجو الشبعان للخدمات العامة" class="logo">
             </div>
+            
             <div class="name">الشبعان للخدمات العامة</div>
             <div class="subtitle">Al-Shabaan for General Services</div>
             
-            <a href="tel:+966554255560" class="phone">
-                <i class="fas fa-phone"></i> +966 55 425 5560
+            <a href="tel:+966554255560" class="phone-btn">
+                <div class="phone-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                اتصل بنا
             </a>
             
             <div class="links">
