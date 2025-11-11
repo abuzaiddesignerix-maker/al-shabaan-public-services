@@ -14,7 +14,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f8f9fa;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -28,104 +28,84 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 30px 25px;
             text-align: center;
-            backdrop-filter: blur(10px);
         }
 
         .logo-container {
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             text-align: center;
         }
 
         .logo {
-            max-width: 150px;
+            max-width: 120px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .name {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 22px;
+            font-weight: 600;
             color: #2d3748;
             margin-bottom: 5px;
         }
 
         .subtitle {
             color: #718096;
-            margin-bottom: 30px;
-            font-size: 16px;
+            margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .phone-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #2d3748;
             color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            margin: 20px 0;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 15px 0;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 600;
-            font-size: 16px;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 15px;
             text-decoration: none;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
 
         .phone-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .phone-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+            background: #4a5568;
         }
 
         .links {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
 
         .link {
             display: flex;
             align-items: center;
-            background: white;
-            padding: 16px 20px;
-            border-radius: 12px;
+            background: #f7fafc;
+            padding: 14px 18px;
+            border-radius: 8px;
             text-decoration: none;
             color: #2d3748;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
 
         .link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: #edf2f7;
         }
 
         .icon {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-left: 15px;
-            font-size: 20px;
+            font-size: 18px;
             color: white;
         }
 
@@ -135,29 +115,28 @@
         }
 
         .title {
-            font-weight: 600;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 15px;
             margin-bottom: 2px;
         }
 
         .desc {
-            font-size: 13px;
+            font-size: 12px;
             color: #718096;
         }
 
-        .whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); }
-        .facebook { background: linear-gradient(45deg, #1877F2, #0D5CB6); }
-        .instagram { background: linear-gradient(45deg, #E4405F, #833AB4); }
-        .tiktok { background: linear-gradient(45deg, #000000, #FE2C55); }
-        .twitter { background: linear-gradient(45deg, #1DA1F2, #0D8BD9); }
-        .snapchat { background: linear-gradient(45deg, #FFFC00, #FFD300); color: #000; }
+        .whatsapp { background: #25D366; }
+        .facebook { background: #1877F2; }
+        .instagram { background: #E4405F; }
+        .tiktok { background: #000000; }
+        .twitter { background: #1DA1F2; }
+        .snapchat { background: #FFFC00; color: #000; }
 
         .footer {
-            color: white;
+            color: #718096;
             text-align: center;
             margin-top: 25px;
-            font-size: 14px;
-            opacity: 0.9;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -172,9 +151,7 @@
             <div class="subtitle">Al-Shabaan for General Services</div>
             
             <a href="tel:+966554255560" class="phone-btn">
-                <div class="phone-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
+                <i class="fas fa-phone"></i>
                 اتصل بنا
             </a>
             
