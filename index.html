@@ -81,6 +81,86 @@
             font-weight: 500;
         }
 
+        /* قسم خرائط Google */
+        .map-section {
+            background: white;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .map-btn {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 16px 30px;
+            border-radius: 25px;
+            margin: 0 0 20px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .map-preview {
+            width: 100%;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            position: relative;
+            background: #f1f3f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5f6368;
+            font-weight: 500;
+        }
+
+        .map-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9));
+        }
+
+        .map-preview i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .map-preview-text {
+            z-index: 1;
+            position: relative;
+            text-align: center;
+        }
+
         /* الجزء السفلي - وسائل التواصل */
         .bottom-section {
             background: white;
@@ -245,6 +325,23 @@
             <div class="subtitle">Al-Shabaan for General Services</div>
         </div>
 
+        <!-- قسم خرائط Google -->
+        <div class="map-section">
+            <a href="https://maps.app.goo.gl/bPuB6kmHWb3gw6YR6?g_st=ipc" class="map-btn">
+                <i class="fas fa-map-marker-alt"></i>
+                موقعنا على الخريطة
+            </a>
+            
+            <div class="section-title">العنوان</div>
+            
+            <div class="map-preview">
+                <div class="map-preview-text">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <div>انقر لرؤية موقعنا على خرائط جوجل</div>
+                </div>
+            </div>
+        </div>
+
         <!-- الجزء السفلي - وسائل التواصل -->
         <div class="bottom-section">
             <a href="tel:+966554255560" class="phone-btn">
@@ -309,9 +406,10 @@
         // إضافة تأثيرات تفاعلية إضافية
         document.addEventListener('DOMContentLoaded', function() {
             const socialItems = document.querySelectorAll('.social-item');
+            const mapBtn = document.querySelector('.map-btn');
             
+            // تأثير دخول متتالي للوسائط الاجتماعية
             socialItems.forEach((item, index) => {
-                // تأثير دخول متتالي
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
                 
@@ -321,6 +419,16 @@
                     item.style.transform = 'translateY(0)';
                 }, index * 100);
             });
+            
+            // تأثير زر الخريطة
+            mapBtn.style.opacity = '0';
+            mapBtn.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                mapBtn.style.transition = 'all 0.5s ease';
+                mapBtn.style.opacity = '1';
+                mapBtn.style.transform = 'translateY(0)';
+            }, 300);
         });
     </script>
 </body>
