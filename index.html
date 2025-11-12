@@ -20,8 +20,104 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            /* خلفية بديلة جميلة */
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
+            overflow-x: hidden;
+        }
+
+        /* تأثيرات بصرية إضافية للخلفية */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* أنماط متحركة في الخلفية */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .bg-pattern div {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .bg-pattern div:nth-child(1) {
+            top: 20%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .bg-pattern div:nth-child(2) {
+            top: 60%;
+            right: 80%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 2s;
+        }
+
+        .bg-pattern div:nth-child(3) {
+            top: 80%;
+            right: 40%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 4s;
+        }
+
+        .bg-pattern div:nth-child(4) {
+            top: 30%;
+            right: 70%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 6s;
+        }
+
+        .bg-pattern div:nth-child(5) {
+            top: 50%;
+            right: 20%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 8s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(0) rotate(180deg);
+                opacity: 0.1;
+            }
+            75% {
+                transform: translateY(20px) rotate(270deg);
+                opacity: 0.3;
+            }
         }
 
         .container {
@@ -32,13 +128,32 @@
 
         /* الجزء العلوي - اللوجو والاسم */
         .top-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px 20px 0 0;
             padding: 40px 25px 30px 25px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             position: relative;
-            border-bottom: 1px solid #f1f3f4;
+            border-bottom: 1px solid rgba(233, 236, 239, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* فاصل احترافي غير تقليدي */
+        .top-section::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #667eea 20%, 
+                #764ba2 50%, 
+                #667eea 80%, 
+                transparent 100%);
+            border-radius: 2px;
         }
 
         .logo-container {
@@ -51,6 +166,7 @@
             height: auto;
             max-width: 150px;
             max-height: 120px;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
         }
 
         .name {
@@ -58,6 +174,7 @@
             font-weight: 700;
             color: #2d3748;
             margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .subtitle {
@@ -68,18 +185,18 @@
 
         /* الجزء السفلي - وسائل التواصل */
         .bottom-section {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 0 0 20px 20px;
             padding: 30px 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-top: none;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .phone-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 16px 30px;
-            border-radius: 15px;
+            border-radius: 25px;
             margin: 0 0 25px 0;
             display: inline-flex;
             align-items: center;
@@ -88,14 +205,32 @@
             font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
             width: 100%;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
         }
 
         .phone-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .phone-btn:hover::before {
+            transform: translateX(0);
         }
 
         .social-section {
@@ -108,6 +243,19 @@
             color: #2d3748;
             margin-bottom: 20px;
             text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
         }
 
         .social-grid {
@@ -116,103 +264,75 @@
             gap: 15px;
         }
 
-        /* تحسينات الخلفية البيضاء */
         .social-item {
-            background: white;
+            background: rgba(248, 249, 250, 0.8);
             padding: 20px 15px;
-            border-radius: 16px;
+            border-radius: 15px;
             text-decoration: none;
             color: #2d3748;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid #e8eaed;
+            border: 1px solid rgba(233, 236, 239, 0.5);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(5px);
         }
 
-        /* تأثير حدود متدرج */
         .social-item::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
             width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            padding: 2px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .social-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-            background: white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .social-item:hover::before {
-            opacity: 1;
+            transform: scaleX(1);
         }
 
-        /* تحسين الأيقونات */
         .social-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 16px;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 22px;
             color: white;
-            margin-bottom: 12px;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            position: relative;
-            z-index: 2;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .social-item:hover .social-icon {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            transform: scale(1.1) rotate(5deg);
         }
 
         .social-name {
             font-weight: 600;
             font-size: 14px;
             margin-top: 5px;
-            position: relative;
-            z-index: 2;
-            color: #2d3748;
         }
 
-        /* ألوان الأيقونات */
-        .whatsapp { 
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
-        .facebook { 
-            background: linear-gradient(135deg, #1877F2, #0D5CB6);
-        }
-        .instagram { 
-            background: linear-gradient(135deg, #E4405F, #833AB4, #405DE6);
-        }
-        .tiktok { 
-            background: linear-gradient(135deg, #000000, #FE2C55, #25F4EE);
-        }
-        .twitter { 
-            background: linear-gradient(135deg, #1DA1F2, #0D8BD9);
-        }
-        .snapchat { 
-            background: linear-gradient(135deg, #FFFC00, #FFD300);
-            color: #000;
-        }
+        .whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); }
+        .facebook { background: linear-gradient(45deg, #1877F2, #0D5CB6); }
+        .instagram { background: linear-gradient(45deg, #E4405F, #833AB4, #405DE6); }
+        .tiktok { background: linear-gradient(45deg, #000000, #FE2C55, #25F4EE); }
+        .twitter { background: linear-gradient(45deg, #1DA1F2, #0D8BD9); }
+        .snapchat { background: linear-gradient(45deg, #FFFC00, #FFD300); color: #000; }
 
         /* زر الموقع */
         .location-section {
@@ -224,7 +344,7 @@
             background: linear-gradient(135deg, #4CAF50, #2E7D32);
             color: white;
             padding: 16px 30px;
-            border-radius: 15px;
+            border-radius: 25px;
             display: inline-flex;
             align-items: center;
             gap: 12px;
@@ -232,14 +352,32 @@
             font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
             width: 100%;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
         }
 
         .location-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(76, 175, 80, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(76, 175, 80, 0.5);
+        }
+
+        .location-btn:hover::before {
+            transform: translateX(0);
         }
 
         .footer {
@@ -251,21 +389,30 @@
         }
 
         /* تأثيرات متقدمة */
-        @keyframes float {
+        @keyframes socialFloat {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-5px); }
         }
 
         .social-item:nth-child(odd):hover {
-            animation: float 2s ease-in-out infinite;
+            animation: socialFloat 2s ease-in-out infinite;
         }
 
         .social-item:nth-child(even):hover {
-            animation: float 2s ease-in-out infinite 0.5s;
+            animation: socialFloat 2s ease-in-out infinite 0.5s;
         }
     </style>
 </head>
 <body>
+    <!-- أنماط الخلفية المتحركة -->
+    <div class="bg-pattern">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <div class="container">
         <!-- الجزء العلوي - اللوجو والاسم -->
         <div class="top-section">
@@ -285,7 +432,7 @@
             </a>
 
             <div class="social-section">
-                <div class="section-title">تواصل معنا عبر</div>
+                <div class="section-title"> تواصل معنا عبر</div>
                 <div class="social-grid">
                     <a href="https://wa.me/966554255560" class="social-item">
                         <div class="social-icon whatsapp">
@@ -349,7 +496,10 @@
         // إضافة تأثيرات تفاعلية إضافية
         document.addEventListener('DOMContentLoaded', function() {
             const socialItems = document.querySelectorAll('.social-item');
+            const locationBtn = document.querySelector('.location-btn');
+            const phoneBtn = document.querySelector('.phone-btn');
             
+            // تأثير دخول متتالي للوسائط الاجتماعية
             socialItems.forEach((item, index) => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
@@ -360,6 +510,26 @@
                     item.style.transform = 'translateY(0)';
                 }, index * 100);
             });
+
+            // تأثير لزر الموقع
+            locationBtn.style.opacity = '0';
+            locationBtn.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                locationBtn.style.transition = 'all 0.5s ease';
+                locationBtn.style.opacity = '1';
+                locationBtn.style.transform = 'translateY(0)';
+            }, 700);
+
+            // تأثير لزر الهاتف
+            phoneBtn.style.opacity = '0';
+            phoneBtn.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                phoneBtn.style.transition = 'all 0.5s ease';
+                phoneBtn.style.opacity = '1';
+                phoneBtn.style.transform = 'translateY(0)';
+            }, 200);
         });
     </script>
 </body>
